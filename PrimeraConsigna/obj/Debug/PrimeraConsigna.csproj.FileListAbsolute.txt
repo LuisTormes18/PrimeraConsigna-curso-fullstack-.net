@@ -1,0 +1,13 @@
+C:\Users\Luis Tormes\source\repos\PrimeraConsigna\PrimeraConsigna\bin\Debug\PrimeraConsigna.exe.config
+C:\Users\Luis Tormes\source\repos\PrimeraConsigna\PrimeraConsigna\bin\Debug\PrimeraConsigna.exe
+C:\Users\Luis Tormes\source\repos\PrimeraConsigna\PrimeraConsigna\bin\Debug\PrimeraConsigna.pdb
+C:\Users\Luis Tormes\source\repos\PrimeraConsigna\PrimeraConsigna\obj\Debug\PrimeraConsigna.csproj.AssemblyReference.cache
+C:\Users\Luis Tormes\source\repos\PrimeraConsigna\PrimeraConsigna\obj\Debug\PrimeraConsigna.Form1.resources
+C:\Users\Luis Tormes\source\repos\PrimeraConsigna\PrimeraConsigna\obj\Debug\PrimeraConsigna.Properties.Resources.resources
+C:\Users\Luis Tormes\source\repos\PrimeraConsigna\PrimeraConsigna\obj\Debug\PrimeraConsigna.csproj.GenerateResource.cache
+C:\Users\Luis Tormes\source\repos\PrimeraConsigna\PrimeraConsigna\obj\Debug\PrimeraConsigna.csproj.CoreCompileInputs.cache
+C:\Users\Luis Tormes\source\repos\PrimeraConsigna\PrimeraConsigna\obj\Debug\PrimeraConsigna.exe
+C:\Users\Luis Tormes\source\repos\PrimeraConsigna\PrimeraConsigna\obj\Debug\PrimeraConsigna.pdb
+C:\Users\Luis Tormes\source\repos\PrimeraConsigna\PrimeraConsigna\bin\Debug\LogicaDeNegocio.dll
+C:\Users\Luis Tormes\source\repos\PrimeraConsigna\PrimeraConsigna\bin\Debug\LogicaDeNegocio.pdb
+C:\Users\Luis Tormes\source\repos\PrimeraConsigna\PrimeraConsigna\obj\Debug\PrimeraConsigna.csproj.CopyComplete

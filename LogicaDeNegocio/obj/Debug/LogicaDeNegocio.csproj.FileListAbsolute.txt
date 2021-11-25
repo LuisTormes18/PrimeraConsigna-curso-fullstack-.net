@@ -1,0 +1,6 @@
+C:\Users\Luis Tormes\source\repos\PrimeraConsigna\LogicaDeNegocio\bin\Debug\LogicaDeNegocio.dll
+C:\Users\Luis Tormes\source\repos\PrimeraConsigna\LogicaDeNegocio\bin\Debug\LogicaDeNegocio.pdb
+C:\Users\Luis Tormes\source\repos\PrimeraConsigna\LogicaDeNegocio\obj\Debug\LogicaDeNegocio.csproj.AssemblyReference.cache
+C:\Users\Luis Tormes\source\repos\PrimeraConsigna\LogicaDeNegocio\obj\Debug\LogicaDeNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Luis Tormes\source\repos\PrimeraConsigna\LogicaDeNegocio\obj\Debug\LogicaDeNegocio.dll
+C:\Users\Luis Tormes\source\repos\PrimeraConsigna\LogicaDeNegocio\obj\Debug\LogicaDeNegocio.pdb
