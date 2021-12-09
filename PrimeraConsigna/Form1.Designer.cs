@@ -40,17 +40,15 @@ namespace PrimeraConsigna
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvListaDeEspera = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.iniciarConsulta = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnFinalizar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDeConsultas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicos)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDeEspera)).BeginInit();
-            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -58,7 +56,6 @@ namespace PrimeraConsigna
             this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -109,6 +106,8 @@ namespace PrimeraConsigna
             // 
             // dgvListaDeConsultas
             // 
+            this.dgvListaDeConsultas.AllowUserToAddRows = false;
+            this.dgvListaDeConsultas.AllowUserToDeleteRows = false;
             this.dgvListaDeConsultas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -117,11 +116,14 @@ namespace PrimeraConsigna
             this.dgvListaDeConsultas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListaDeConsultas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvListaDeConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaDeConsultas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btnFinalizar});
             this.dgvListaDeConsultas.Location = new System.Drawing.Point(26, 78);
             this.dgvListaDeConsultas.Name = "dgvListaDeConsultas";
             this.dgvListaDeConsultas.RowHeadersVisible = false;
             this.dgvListaDeConsultas.Size = new System.Drawing.Size(886, 193);
             this.dgvListaDeConsultas.TabIndex = 6;
+            this.dgvListaDeConsultas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaDeConsultas_CellClick);
             // 
             // label1
             // 
@@ -195,35 +197,6 @@ namespace PrimeraConsigna
             this.dgvListaDeEspera.TabIndex = 10;
             this.dgvListaDeEspera.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaDeEspera_CellClick_1);
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.label4);
-            this.tabPage3.Location = new System.Drawing.Point(4, 33);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(952, 525);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Consultas";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(31, 25);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 24);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Consultas";
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 33);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(952, 525);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Estadisticas";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
             // iniciarConsulta
             // 
             this.iniciarConsulta.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -232,6 +205,20 @@ namespace PrimeraConsigna
             this.iniciarConsulta.Name = "iniciarConsulta";
             this.iniciarConsulta.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.iniciarConsulta.Text = "";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(952, 529);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Estadisticas";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.HeaderText = "Finalizar";
+            this.btnFinalizar.Name = "btnFinalizar";
             // 
             // Form1
             // 
@@ -251,8 +238,6 @@ namespace PrimeraConsigna
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDeEspera)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
 
 		}
@@ -264,15 +249,14 @@ namespace PrimeraConsigna
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvMedicos;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvListaDeConsultas;
         private System.Windows.Forms.Button buttonVerTodosLosMedicos;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvListaDeEspera;
         private System.Windows.Forms.DataGridViewButtonColumn iniciarConsulta;
+        private System.Windows.Forms.DataGridViewButtonColumn btnFinalizar;
     }
 }
 

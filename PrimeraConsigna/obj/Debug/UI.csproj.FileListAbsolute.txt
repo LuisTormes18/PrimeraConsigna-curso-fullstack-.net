@@ -13,3 +13,4 @@ C:\Users\Luis Tormes\source\repos\PrimeraConsigna\PrimeraConsigna\obj\Debug\Prim
 C:\Users\Luis Tormes\source\repos\PrimeraConsigna\PrimeraConsigna\obj\Debug\PrimeraConsigna.pdb
 C:\Users\Luis Tormes\source\repos\PrimeraConsigna\PrimeraConsigna\obj\Debug\PrimeraConsigna.FormMedicos.resources
 C:\Users\Luis Tormes\source\repos\PrimeraConsigna\PrimeraConsigna\obj\Debug\PrimeraConsigna.FormCrearNuevaConsulta.resources
+C:\Users\Luis Tormes\source\repos\PrimeraConsigna\PrimeraConsigna\obj\Debug\PrimeraConsigna.ReporteDeConsulta.resources

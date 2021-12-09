@@ -100,8 +100,9 @@ namespace PrimeraConsigna
 			dat.Columns.Add("Medico");
 			dat.Columns.Add("Especialidad");
 			dat.Columns.Add("Paciente");
+			dat.Columns.Add("Motivo de  la Consulta");
 			dat.Columns.Add("Hora de Entrada");
-
+			
 
 			var consultas = DataAccess.getListaDeConsultas().ToList();
 			Console.WriteLine(consultas);
@@ -115,6 +116,7 @@ namespace PrimeraConsigna
 				fila["Medico"] = $"{consulta.medico.firstname} {consulta.medico.lastname}";
 				fila["Especialidad"] = consulta.medico.speciality;
 				fila["Paciente"] = $"{consulta.paciente.firstname} {consulta.paciente.lastname} ";
+				fila["Motivo de  la Consulta"] = consulta.motivo;
 				fila["Hora de Entrada"] = consulta.init.ToString();
 				dat.Rows.Add(fila);
 
@@ -154,7 +156,7 @@ namespace PrimeraConsigna
 
 					Form form = new FormCrearNuevaConsulta(id);
 
-					form.ShowDialog();
+					form.Show();
 
                     form.FormClosed += Form_FormClosed; 
 
@@ -172,10 +174,28 @@ namespace PrimeraConsigna
 		private void Form_FormClosed(object sender, FormClosedEventArgs e)
         {
 			showListaDeConsultas();
-			
 
-			throw new NotImplementedException();
         }
 
-	}
+        private void dgvListaDeConsultas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+			try
+			{
+				if (dgvListaDeConsultas.Columns[e.ColumnIndex].Name == "btnFinalizar")
+				{
+
+					string id = dgvListaDeEspera.CurrentRow.Cells[1].Value.ToString();
+
+					Form form = new ReporteDeConsulta(id);
+
+
+				}
+
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex);
+			}
+		}
+    }
 }

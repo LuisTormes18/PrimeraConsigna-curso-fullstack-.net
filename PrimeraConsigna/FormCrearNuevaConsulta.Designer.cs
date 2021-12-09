@@ -42,7 +42,6 @@ namespace PrimeraConsigna
             this.comboBoxEspecialistas = new System.Windows.Forms.ComboBox();
             this.textBoxtMotivo = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -181,22 +180,11 @@ namespace PrimeraConsigna
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(12, 373);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(66, 31);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Limpiar";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // FormCrearNuevaConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(549, 414);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxtMotivo);
             this.Controls.Add(this.comboBoxEspecialistas);
@@ -236,6 +224,5 @@ namespace PrimeraConsigna
         private System.Windows.Forms.ComboBox comboBoxEspecialistas;
         private System.Windows.Forms.TextBox textBoxtMotivo;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
     }
 }

@@ -10,6 +10,7 @@ namespace LogicaDeNegocio
     {
         public double dni { get; set; }
         public string obra_social { get; set; }
+        public string state { get; set; }
 
         public Paciente(string firstname, string lastname , int age, double dni, string obra_social)
         {
@@ -19,7 +20,6 @@ namespace LogicaDeNegocio
             this.dni = dni;
             this.obra_social = obra_social;
             this.id = $"{dni}{randomID.ToString()}{age.ToString()}";
-
         }
 
         public Paciente()
