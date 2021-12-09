@@ -104,6 +104,8 @@ namespace PrimeraConsigna
 
 
 			var consultas = DataAccess.getListaDeConsultas().ToList();
+			Console.WriteLine(consultas);
+			
 
 			consultas.ForEach(consulta => {
 
@@ -125,10 +127,6 @@ namespace PrimeraConsigna
 		#endregion
 
 
-	
-		
-
-
 
 		// funcion para abrir un formulario cn la lista de todos ls medicos
 		private void buttonVerTodosLosMedicos_Click(object sender, EventArgs e)
@@ -141,30 +139,24 @@ namespace PrimeraConsigna
 
         }
 
-		// funcion para guardar la nueva consulta
-		public void PasarAConsulta(Medico medico, Paciente paciente)
-		{
-			DataAccess.setNewConsulta(medico, paciente);
-		}
+		
 		// funcion para crear una nueva consulta
 
 		private void dgvListaDeEspera_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
+			
 			try
 			{
 				if (dgvListaDeEspera.Columns[e.ColumnIndex].Name == "iniciarConsulta")
 				{
 
+					string id = dgvListaDeEspera.CurrentRow.Cells[1].Value.ToString();
 
-					int id = Int32.Parse(dgvListaDeEspera.CurrentRow.Cells[1].Value.ToString());
-					string name = dgvListaDeEspera.CurrentRow.Cells[2].Value.ToString();
-					int age = Int32.Parse(dgvListaDeEspera.CurrentRow.Cells[3].Value.ToString());
-					double dni = Double.Parse(dgvListaDeEspera.CurrentRow.Cells[4].Value.ToString());
-					string obra_social = dgvListaDeEspera.CurrentRow.Cells[5].Value.ToString();
-
-					Form form = new FormCrearNuevaConsulta(id,name,age,dni,obra_social);
+					Form form = new FormCrearNuevaConsulta(id);
 
 					form.ShowDialog();
+
+                    form.FormClosed += Form_FormClosed; 
 
 				}
 
@@ -174,5 +166,16 @@ namespace PrimeraConsigna
 				Console.WriteLine(ex);
 			}
 		}
-    }
+
+		// funcion para cargar las consultas de nuevo luego de cerrarce el formulario de nueva consulta
+
+		private void Form_FormClosed(object sender, FormClosedEventArgs e)
+        {
+			showListaDeConsultas();
+			
+
+			throw new NotImplementedException();
+        }
+
+	}
 }

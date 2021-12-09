@@ -13,19 +13,96 @@ namespace PrimeraConsigna
 {
     public partial class FormCrearNuevaConsulta : Form
     {
-        public FormCrearNuevaConsulta(int id, string name, int age, double dni, string obra_social)
+        List<Medico> medicos = DataAccess.getMedicos("Disponible");
+        Paciente paciente = new Paciente();
+        Medico especialista = new Medico();
+
+        public FormCrearNuevaConsulta(string id)
         {
             InitializeComponent();
 
-            //mostrar los datos del paciente
-            showPaciente(id, name, age, dni, obra_social);
+            // obtener el paciente por el id
+            paciente  = DataAccess.getPacienteById(id);
 
+            //mostrar los datos del paciente
+            showPaciente();
+
+            //cargar los datos de los medicos al Combobox
+            llenarComboboxDeEspecialistas();
+
+            //guardar al especialista seleccionado
+            saveEspecialista();
         }
 
 
-        public void  showPaciente(int id, string name, int age, double dni, string obra_social)
+        //funcion para mostrar los datos del paciente
+        public void  showPaciente()
         {
-            namePaciente.Text = name;
+            try
+            {
+
+                namePaciente.Text = $"{paciente.firstname} {paciente.lastname}";
+                dniPaciente.Text = paciente.dni.ToString();
+                agePaciente.Text = paciente.age.ToString();
+                obra_social_paciente.Text = paciente.obra_social;
+
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+
+
+
+        }
+
+        public void llenarComboboxDeEspecialistas()
+        {
+            List<string> nombres = new List<string>();
+
+            medicos.ForEach(m => { nombres.Add($"{m.firstname} {m.lastname} - {m.speciality}"); });
+            comboBoxEspecialistas.DataSource = nombres;
+        }
+
+
+        // boton para crear una consulta
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                DataAccess.setNewConsulta(especialista, paciente, textBoxtMotivo.ToString());
+                MessageBox.Show("Creda Correctamente");
+                Close();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un error al intentar crear la consulta");
+
+            }
+
+        }
+
+        public void saveEspecialista()
+        {
+            string element = comboBoxEspecialistas.SelectedItem.ToString();
+
+            string[] arg = element.Split('-');
+
+            especialista = DataAccess.getMedicoByFullName(arg[0]);
+        }
+        private void comboBoxEspecialistas_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+
+            saveEspecialista();
+
+        }
+
+        private void FormCrearNuevaConsulta_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
         }
     }
 }

@@ -35,18 +35,24 @@ namespace PrimeraConsigna
             // 
             // dgvMedicos
             // 
+            this.dgvMedicos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMedicos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvMedicos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMedicos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvMedicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMedicos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMedicos.Location = new System.Drawing.Point(0, 0);
             this.dgvMedicos.Name = "dgvMedicos";
-            this.dgvMedicos.Size = new System.Drawing.Size(652, 450);
+            this.dgvMedicos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvMedicos.RowHeadersVisible = false;
+            this.dgvMedicos.Size = new System.Drawing.Size(761, 450);
             this.dgvMedicos.TabIndex = 1;
             // 
             // FormMedicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 450);
+            this.ClientSize = new System.Drawing.Size(761, 450);
             this.Controls.Add(this.dgvMedicos);
             this.Name = "FormMedicos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

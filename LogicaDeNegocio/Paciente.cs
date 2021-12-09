@@ -18,7 +18,8 @@ namespace LogicaDeNegocio
             this.age = age;
             this.dni = dni;
             this.obra_social = obra_social;
-            this.id = 1;
+            this.id = $"{dni}{randomID.ToString()}{age.ToString()}";
+
         }
 
         public Paciente()
